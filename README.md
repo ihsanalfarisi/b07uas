@@ -1,6 +1,6 @@
 # PROYEK AKHIR SEMESTER: B07
 
-Link GitLab [Click Here](https://gitlab.com/amira.husna01/pbpb07uas.git)
+Link GitHub [Click Here](https://github.com/alfarisi17/b07uas.git)
 
 Link APK [Click Here](https://github.com/alfarisi17/b07uas/releases)
 
