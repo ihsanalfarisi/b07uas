@@ -30,29 +30,26 @@ perjalanannya secara baik.
 
 ## Modul
 
-###Laman utama (Homepage) & Sign Up/Login
+
+### Laman utama (Homepage) & Sign Up/Login
 
 
-###Statistika Covid-19 di Daerah Tujuan
+### Statistika Covid-19 di Daerah Tujuan
 
 
-
-###Info Regulasi Wisatawan di Daerah Tujuan
-
+### Info Regulasi Wisatawan di Daerah Tujuan
 
 
-###“Get Swabbed!”: Info lokasi layanan swab terdekat
+### “Get Swabbed!”: Info lokasi layanan swab terdekat
 
 
-###Info hotel karantina di Indonesia
+### Info hotel karantina di Indonesia
 
 
-
-###Support Page
-
+### Support Page
 
 
-###Laman artikel
+### Laman artikel
 
 
 
