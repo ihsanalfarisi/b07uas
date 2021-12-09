@@ -37,14 +37,14 @@ Seperti pada umumnya, beranda utama akan menampilkan kalimat pembuka yang akan m
 
 ### Statistika Covid-19 di Daerah Tujuan
 
-Modul ini berisikan informasi statitik COVID-19 pada berbagai negara yang dapat disimpan oleh pengguna pada akunnya masing-masing. Integrasi webs ervice pada modul ini akan dilakukan dengan pemanggilan objek country yang berelasi dengan akun pengguna dalam laman JSON.
+Modul ini berisikan informasi statitik COVID-19 pada berbagai negara yang dapat disimpan oleh pengguna pada akunnya masing-masing. Integrasi web service pada modul ini akan dilakukan dengan pemanggilan objek country yang berelasi dengan akun pengguna dalam laman JSON.
 
 ### Info Regulasi Wisatawan di Daerah Tujuan
 
 Modul ini berisikan informasi mengenai regulasi Covid-19 dari berbagai negara destinasi wisatawan di luar negeri (pada tugas ini baru terdapat tiga negara). Untuk mengintegrasikan modul ini dengan web service atas halaman web sebelumnya, akan dilakukan pemanggilan objek dari laman JSON pada halaman web yang telah dibuat.
 
 ### “Get Swabbed!”: Info lokasi layanan swab terdekat
-
+Modul ini memuat daftar lokasi swab test di negara tujuan yang tersedia (Singapore, Malaysia, Thailand). Integrasi modul dengan halaman web service dilakukan dengan cara memanggil objek dari JSON yang ada pada halaman web sebelumnya.
 
 ### Info hotel karantina di Indonesia
 
