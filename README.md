@@ -31,20 +31,23 @@ perjalanannya secara baik.
 ## Modul
 
 
-### Laman utama (Homepage) & Sign Up/Login
+### Laman utama (Beranda) & Sign Up/Login
 
+Seperti pada umumnya, beranda utama akan menampilkan kalimat pembuka yang akan menyambut para user. Selain itu, di dalamnya juga akan terdapat data statistik covid-19 dalam skala dunia, data tersebut akan diambil dari JSON yang digunakan juga pada website tugas tengah semester. Setelah itu terdapat penjelasan fitur dan feedback user, yang keduanya merupakan models yang nanti juga akan dilakukan pemanggilannya dari website tugas tengah semester.
 
 ### Statistika Covid-19 di Daerah Tujuan
 
 
 ### Info Regulasi Wisatawan di Daerah Tujuan
 
+Modul ini berisikan informasi mengenai regulasi Covid-19 dari berbagai negara destinasi wisatawan di luar negeri (pada tugas ini baru terdapat tiga negara). Untuk mengintegrasikan modul ini dengan web service atas halaman web sebelumnya, akan dilakukan pemanggilan objek dari laman JSON pada halaman web yang telah dibuat.
 
 ### “Get Swabbed!”: Info lokasi layanan swab terdekat
 
 
 ### Info hotel karantina di Indonesia
 
+Laman informasi hotel karantina memuat rekomendasi hotel-hotel karantina terbaik yang dapat ditempati oleh wisatawan saat menuju atau sepulang dari negara tujuannya. Integrasi dengan web service berupa pemanggilan objek hotel dalam laman JSON yang terdapat pada halaman web sebelumnya.
 
 ### Support Page
 
