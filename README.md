@@ -54,5 +54,6 @@ Laman bantuan ini diperuntukkan untuk pengajuan berbagai keluhan terkait penyele
 
 ### Laman artikel
 
+Laman artikel memuat info dan bacaan terkait tips berpergian saat pandemi, rekomendasi destinasi wisata, dan artikel berupa pengalaman berpergian yang dapat ditulis oleh user.
 
 
