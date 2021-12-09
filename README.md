@@ -37,6 +37,7 @@ Seperti pada umumnya, beranda utama akan menampilkan kalimat pembuka yang akan m
 
 ### Statistika Covid-19 di Daerah Tujuan
 
+Modul ini berisikan informasi statitik COVID-19 pada berbagai negara yang dapat disimpan oleh pengguna pada akunnya masing-masing. Integrasi webs ervice pada modul ini akan dilakukan dengan pemanggilan objek country yang berelasi dengan akun pengguna dalam laman JSON.
 
 ### Info Regulasi Wisatawan di Daerah Tujuan
 
