@@ -50,7 +50,7 @@ Modul ini berisikan informasi mengenai regulasi Covid-19 dari berbagai negara de
 Laman informasi hotel karantina memuat rekomendasi hotel-hotel karantina terbaik yang dapat ditempati oleh wisatawan saat menuju atau sepulang dari negara tujuannya. Integrasi dengan web service berupa pemanggilan objek hotel dalam laman JSON yang terdapat pada halaman web sebelumnya.
 
 ### Support Page
-
+Laman bantuan ini diperuntukkan untuk pengajuan berbagai keluhan terkait penyelewenengan protokol COVID-19 bagi para user. Secara umum, akan terdapat formulir pengsisian keluhan yang dapat diakses oleh user, yang kemudian harapannya akan disampaikan dan dapat dijadikan masukan kepada pihak berwajib pada negara tersebut.
 
 ### Laman artikel
 
