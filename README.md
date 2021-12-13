@@ -54,3 +54,4 @@ Laman informasi hotel karantina memuat rekomendasi hotel-hotel karantina terbaik
 Laman bantuan ini diperuntukkan untuk pengajuan berbagai keluhan terkait penyelewenengan protokol COVID-19 bagi para user. Secara umum, akan terdapat formulir pengisian keluhan yang dapat diakses oleh user, yang disampaikan dan kemudian harapannya akan dapat dijadikan masukan kepada pihak berwajib pada negara tersebut. Di dalamnya terdapat bentuk pemanggilan API, dari data eksternal JSON. Kemudian integrasinya modul ini dengan web service atas halaman web sebelumnya, juga akan dilakukan pemanggilan objek yang merupakan models yang nanti juga akan dilakukan pemanggilannya dari website tugas tengah semester.
 
 ### Laman artikel
+Laman artikel berisi info mengenai perjalanan, tips, dan pengalaman antar pengguna mangenai perjalanan mereka.
