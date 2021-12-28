@@ -77,7 +77,8 @@ class _MainDrawerState extends State<MainDrawer> {
             Navigator.of(context).pushReplacementNamed(HotelScreen.routeName);
           }),
           buildListTile('Artikel', Icons.article, () {
-            Navigator.of(context).pushReplacementNamed(ArtikelScreen.routeName);
+            Navigator.of(context)
+                .pushReplacementNamed(ListArtikelState.routeName);
           }),
           buildListTile('Support', Icons.help, () {
             Navigator.of(context).pushReplacementNamed(SupportScreen.routeName);

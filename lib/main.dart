@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/',
       routes: {
         '/': (ctx) => TabsScreen(),
-        ArtikelScreen.routeName: (ctx) => ArtikelScreen(),
+        ListArtikelState.routeName: (ctx) => ListArtikel(),
         SwabbedScreen.routeName: (ctx) => SwabbedScreen(),
         HotelScreen.routeName: (ctx) => HotelScreen(),
         RegulasiScreen.routeName: (ctx) => RegulasiScreen(),
