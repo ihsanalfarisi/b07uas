@@ -8,6 +8,8 @@ import '../screens/hotel/hotel_screen.dart';
 import '../screens/regulasi/regulasi_screen.dart';
 import '../screens/stat/statistik_screen.dart';
 import '../screens/support/support_screen.dart';
+import '../screens/artikel/artikel_create2.dart';
+import '../screens/artikel/artikel_detail.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,6 +44,8 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/': (ctx) => TabsScreen(),
         ListArtikelState.routeName: (ctx) => ListArtikel(),
+        FormArtikel.namaRoute: (context) => FormArtikel(),
+        DetailArtikelState.namaRoute: (context) => DetailArtikel(),
         SwabbedScreen.routeName: (ctx) => SwabbedScreen(),
         HotelScreen.routeName: (ctx) => HotelScreen(),
         RegulasiScreen.routeName: (ctx) => RegulasiScreen(),
