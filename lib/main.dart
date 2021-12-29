@@ -7,6 +7,9 @@ import '../screens/get_swabbed/get_swabbed_screen.dart';
 import '../screens/hotel/hotel_screen.dart';
 import '../screens/regulasi/regulasi_screen.dart';
 import '../screens/stat/statistik_screen.dart';
+import '../screens/stat/loading.dart';
+import '../screens/stat/add_country.dart';
+import '../screens/stat/card_detail.dart';
 import '../screens/support/support_screen.dart';
 import '../screens/artikel/artikel_create2.dart';
 import '../screens/artikel/artikel_detail.dart';
@@ -50,6 +53,9 @@ class _MyAppState extends State<MyApp> {
         HotelScreen.routeName: (ctx) => HotelScreen(),
         RegulasiScreen.routeName: (ctx) => RegulasiScreen(),
         StatScreen.routeName: (ctx) => StatScreen(),
+        Loading.routeName: (ctx) => Loading(),
+        '/add-country': (context) => AddCountry(),
+        '/card-detail': (context) => CardDetail(),
         SupportScreen.routeName: (ctx) => SupportScreen(),
         DummyScreen.routeName: (ctx) => DummyScreen(),
       },

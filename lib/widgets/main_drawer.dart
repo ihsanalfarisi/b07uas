@@ -1,3 +1,4 @@
+import 'package:b07uas/screens/stat/loading.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/artikel/artikel_screen.dart';
@@ -64,7 +65,9 @@ class _MainDrawerState extends State<MainDrawer> {
             Navigator.of(context).pushReplacementNamed('/');
           }),
           buildListTile('Info Statistik', Icons.insert_chart, () {
-            Navigator.of(context).pushReplacementNamed(StatScreen.routeName);
+            // karena login belom ada userID nya 1 dulu
+            Navigator.of(context).pushReplacementNamed(Loading.routeName,
+                arguments: {"userID": 1, "task": "fetchData"});
           }),
           buildListTile('Regulasi', Icons.fact_check, () {
             Navigator.of(context)
