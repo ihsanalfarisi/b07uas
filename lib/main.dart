@@ -1,3 +1,5 @@
+import 'package:b07uas/screens/support/form_screen.dart';
+import 'package:b07uas/screens/support/support_list_screen.dart';
 import 'package:flutter/material.dart';
 import '../screens/home_screen.dart';
 import '../screens/tabs_screen.dart';
@@ -7,7 +9,13 @@ import '../screens/get_swabbed/get_swabbed_screen.dart';
 import '../screens/hotel/hotel_screen.dart';
 import '../screens/regulasi/regulasi_screen.dart';
 import '../screens/stat/statistik_screen.dart';
+import '../screens/stat/loading.dart';
+import '../screens/stat/add_country.dart';
+import '../screens/stat/card_detail.dart';
 import '../screens/support/support_screen.dart';
+import '../screens/artikel/artikel_create2.dart';
+import '../screens/artikel/artikel_detail.dart';
+import 'screens/login_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,12 +50,20 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/': (ctx) => TabsScreen(),
         ListArtikelState.routeName: (ctx) => ListArtikel(),
+        FormArtikel.namaRoute: (context) => FormArtikel(),
+        DetailArtikelState.namaRoute: (context) => DetailArtikel(),
         SwabbedScreen.routeName: (ctx) => SwabbedScreen(),
         HotelScreen.routeName: (ctx) => HotelScreen(),
         RegulasiScreen.routeName: (ctx) => RegulasiScreen(),
         StatScreen.routeName: (ctx) => StatScreen(),
+        Loading.routeName: (ctx) => Loading(),
+        '/add-country': (context) => AddCountry(),
+        '/card-detail': (context) => CardDetail(),
         SupportScreen.routeName: (ctx) => SupportScreen(),
         DummyScreen.routeName: (ctx) => DummyScreen(),
+        LoginPage.routeName: (ctx) => LoginPage(),
+        FormScreen.routeName: (ctx) => FormScreen(),
+        SupportListScreen.routeName: (ctx) => SupportListScreen(),
       },
       // ignore: missing_return
       onGenerateRoute: (settings) {

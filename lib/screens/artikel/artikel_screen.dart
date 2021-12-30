@@ -20,6 +20,7 @@ class ListArtikelState extends State<ListArtikel> {
       },
       child: Icon(Icons.edit),
       foregroundColor: Colors.white,
+      backgroundColor: Colors.cyan,
     );
   }
 

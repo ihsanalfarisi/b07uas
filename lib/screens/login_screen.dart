@@ -1,17 +1,22 @@
 import 'dart:convert';
+import 'package:b07uas/widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:http/http.dart' as http;
+import 'user.dart' as user;
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
   static const routeName = '/login';
-  _LoginPageState createState() => _LoginPageState();
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
   final _loginFormKey = GlobalKey<FormState>();
   bool isPasswordVisible = false;
-
   void togglePasswordView() {
     setState(() {
       isPasswordVisible = !isPasswordVisible;
@@ -24,31 +29,24 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Login'),
+      ),
+      drawer: MainDrawer(),
       resizeToAvoidBottomInset: false,
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).canvasColor,
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(30),
           child: Column(
             children: <Widget>[
-              SizedBox(
-                height: 60,
-              ),
-              Image(
-                image: AssetImage('assets/images/logo.png'),
-                width: 100,
-                height: 100,
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              // Form
+// Form
               Form(
                 key: _loginFormKey,
                 child: Container(
                   child: Column(
                     children: [
-                      // Username
+// Username
                       Container(
                         decoration: BoxDecoration(
                           color: Color.fromRGBO(250, 250, 250, 0.95),
@@ -64,7 +62,8 @@ class _LoginPageState extends State<LoginPage> {
                               color: Color.fromRGBO(200, 200, 200, 1),
                             ),
                             border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
+                              borderSide:
+                                  BorderSide(color: Colors.cyan, width: 10),
                             ),
                           ),
                           autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -79,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(
                         height: 20,
                       ),
-                      // Password
+// Password
                       Container(
                           decoration: BoxDecoration(
                             color: Color.fromRGBO(250, 250, 250, 0.95),
@@ -104,8 +103,8 @@ class _LoginPageState extends State<LoginPage> {
                                 onPressed: togglePasswordView,
                               ),
                               border: OutlineInputBorder(
-                                borderSide: BorderSide.none,
-                              ),
+                                  borderSide: BorderSide(
+                                      color: Colors.cyan, width: 10)),
                             ),
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
@@ -119,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(
                         height: 30,
                       ),
-                      // Login Button
+// Login Button
                       Container(
                         width: double.infinity,
                         child: TextButton(
@@ -129,18 +128,19 @@ class _LoginPageState extends State<LoginPage> {
                             foregroundColor:
                                 MaterialStateProperty.all<Color>(Colors.white),
                             overlayColor:
-                                MaterialStateProperty.resolveWith<Color>(
+                                MaterialStateProperty.resolveWith<Color?>(
                                     (Set<MaterialState> states) {
                               if (states.contains(MaterialState.pressed))
                                 return Color.fromRGBO(255, 0, 0, 1);
-                              return null!; // Defer to the widget's default.
+                              return null; // Defer to the widget's default.
                             }),
                           ),
                           onPressed: () async {
+                            print(username + " " + password1);
                             if (_loginFormKey.currentState!.validate()) {
                               final response = await http.post(
                                   Uri.parse(
-                                      "http://localhost:8000/flutter-login"),
+                                      "https://pbp-b07.herokuapp.com/loginf"),
                                   headers: <String, String>{
                                     'Content-Type':
                                         'application/json;charset=UTF-8',
@@ -149,10 +149,19 @@ class _LoginPageState extends State<LoginPage> {
                                     'username': username,
                                     'password': password1,
                                   }));
+                              dynamic dataJSON =
+                                  await jsonDecode(response.body);
                               print(response);
                               print(response.body);
-                              // print(username);
-                              // print(password1);
+
+                              if (dataJSON["status"] == "logged in") {
+                                user.user.insert(0, dataJSON);
+                                print(user.user[0]['status']);
+                                Navigator.pushNamed(context, "/", arguments: {
+                                  "userID": dataJSON["userID"],
+                                  "task": "fetchData"
+                                });
+                              }
                             } else {
                               print("Ga valid");
                             }
@@ -171,6 +180,17 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(
                 height: 10,
+              ),
+              RichText(
+                text: TextSpan(
+                    text: "Belum memiliki akun?",
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.popAndPushNamed(context, "/register");
+                      }),
               ),
             ],
           ),

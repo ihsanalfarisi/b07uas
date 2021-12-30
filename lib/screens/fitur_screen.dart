@@ -10,10 +10,22 @@ class FiturScreen extends StatelessWidget {
     return ListView(children: [
       Column(
         children: [
-          SizedBox(height: 10),
+          SizedBox(height: 20),
           Container(
             child: Column(
               children: [
+                Container(
+                  child: Text("SEPUTAR FITUR",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 28,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 2,
+                        wordSpacing: 10,
+                      )),
+                ),
+                SizedBox(height: 20),
                 Center(
                   child: Card(
                     child: InkWell(
