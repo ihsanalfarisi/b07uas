@@ -1,11 +1,11 @@
 import 'package:b07uas/screens/login_required.dart';
+import 'package:b07uas/screens/user.dart' as user;
 import 'package:b07uas/widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:b07uas/screens/user.dart' as user;
- 
+
 class SupportScreen extends StatelessWidget {
   static const routeName = '/support';
- 
+
   @override
   Widget build(BuildContext ctx) {
     return Scaffold(
@@ -13,8 +13,7 @@ class SupportScreen extends StatelessWidget {
         title: Text('Support'),
       ),
       drawer: MainDrawer(),
-      body:
-      user.user[0]['status'] == 'logged off'
+      body: user.user[0]['status'] == 'logged off'
       ? Center(
         child: CustomDialog()
       )
@@ -28,20 +27,20 @@ class SupportScreen extends StatelessWidget {
               margin: EdgeInsets.symmetric(vertical: 60.0, horizontal: 0.0),
               alignment: Alignment.topCenter,
               child: Column(
-                children: <Widget>[
-                  Text("Ada Keluhan?",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25,
-                      ),
-                      textAlign: TextAlign.center),
-                  SizedBox(height: 20),
-                  Text("Klik tombol dibawah ini untuk melaporkan keluhanmu!",
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                      textAlign: TextAlign.center),
-              ])),
+                  children: <Widget>[
+                    Text("Ada Keluhan?\n",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                        textAlign: TextAlign.center),
+                    SizedBox(height: 16),
+                    Text("Klik tombol dibawah ini untuk melaporkan keluhanmu!",
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                        textAlign: TextAlign.center),
+                  ])),
           Center(
             child: ElevatedButton(
               onPressed: () {
@@ -60,7 +59,7 @@ class SupportScreen extends StatelessWidget {
                 Navigator.pushNamed(ctx, '/support-list');
               },
               child: Text(
-                'Lihat List Keluhan',
+                'Lihat list keluhan',
                 style: TextStyle(color: Colors.white, fontSize: 16),
               ),
             ),
@@ -70,4 +69,3 @@ class SupportScreen extends StatelessWidget {
     );
   }
 }
- 
