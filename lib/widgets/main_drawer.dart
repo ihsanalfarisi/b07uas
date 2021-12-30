@@ -1,3 +1,4 @@
+import 'package:b07uas/screens/login_screen.dart';
 import 'package:b07uas/screens/stat/loading.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,7 @@ import '../screens/hotel/hotel_screen.dart';
 import '../screens/regulasi/regulasi_screen.dart';
 import '../screens/stat/statistik_screen.dart';
 import '../screens/support/support_screen.dart';
+import '../screens/user.dart' as user;
 
 class MainDrawer extends StatefulWidget {
   const MainDrawer({Key? key}) : super(key: key);
@@ -35,31 +37,48 @@ class _MainDrawerState extends State<MainDrawer> {
     );
   }
 
+  Widget _logout() {
+    return buildListTile('Logout', Icons.logout, () {
+      user.user.insert(0, {'status': "logged off"});
+      print(user.user[0]['status']);
+      Navigator.of(context).pushReplacementNamed('/');
+    });
+  }
+
+  Widget _login() {
+    return buildListTile('Logout', Icons.logout, () {
+      Navigator.of(context).pushReplacementNamed('/');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
         children: <Widget>[
-          // Container(
-          //   height: 120,
-          //   width: double.infinity,
-          //   padding: EdgeInsets.all(20),
-          //   alignment: Alignment.centerLeft,
-          //   color: Theme.of(context).primaryColor,
-          //   child: Text(
-          //     'Safe Flight',
-          //     style: TextStyle(
-          //         fontWeight: FontWeight.w700,
-          //         fontSize: 24,
-          //         color: Colors.black),
-          //   ),
-          // ),
-          // SizedBox(
-          //   height: 20,
-          // ),
-          UserAccountsDrawerHeader(
-            accountName: Text("Magnolia Fayza"),
-            accountEmail: Text("magnolia.fayza01@ui.ac.id"),
+          Container(
+            child: user.user[0]['status'] == 'logged off'
+                ? Container(
+                    decoration: BoxDecoration(color: Colors.cyan),
+                    child: Column(children: [
+                      SizedBox(
+                        height: 50,
+                      ),
+                      Text("Safe Flight",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 35,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 1,
+                            wordSpacing: 5,
+                          )),
+                      SizedBox(height: 50),
+                    ]))
+                : UserAccountsDrawerHeader(
+                    accountName: Text(user.user[0]['username']),
+                    accountEmail: Text(user.user[0]['email']),
+                  ),
           ),
           buildListTile('Beranda', Icons.home, () {
             Navigator.of(context).pushReplacementNamed('/');
@@ -88,6 +107,8 @@ class _MainDrawerState extends State<MainDrawer> {
           buildListTile('Dummy', Icons.assessment, () {
             Navigator.of(context).pushReplacementNamed(DummyScreen.routeName);
           }),
+          Container(
+              child: user.user[0]['status'] == 'logged off' ? null : _logout())
         ],
       ),
     );

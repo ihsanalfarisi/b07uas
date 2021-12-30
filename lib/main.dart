@@ -13,6 +13,7 @@ import '../screens/stat/card_detail.dart';
 import '../screens/support/support_screen.dart';
 import '../screens/artikel/artikel_create2.dart';
 import '../screens/artikel/artikel_detail.dart';
+import 'screens/login_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -58,6 +59,7 @@ class _MyAppState extends State<MyApp> {
         '/card-detail': (context) => CardDetail(),
         SupportScreen.routeName: (ctx) => SupportScreen(),
         DummyScreen.routeName: (ctx) => DummyScreen(),
+        LoginPage.routeName: (ctx) => LoginPage()
       },
       // ignore: missing_return
       onGenerateRoute: (settings) {

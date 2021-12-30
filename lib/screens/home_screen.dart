@@ -1,6 +1,8 @@
+import 'package:b07uas/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'user.dart' as user;
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -62,13 +64,43 @@ class HomeScreen extends StatelessWidget {
                     wordSpacing: 5,
                   ))),
           SizedBox(height: 15),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text("Login Sekarang"),
-            style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.blue)),
-          ),
+          Container(
+              child: user.user[0]['status'] == 'logged off'
+                  ? ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushReplacementNamed(LoginPage.routeName);
+                      },
+                      child: Text("Login Sekarang"),
+                      style: ButtonStyle(
+                          foregroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.blue)),
+                    )
+                  : Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Selamat Datang, ",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 1,
+                              wordSpacing: 5,
+                            )),
+                        Text(user.user[0]['username'] + "!",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.blue,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 1,
+                              wordSpacing: 5,
+                            )),
+                      ],
+                    )),
           SizedBox(
             height: 30,
           ),
