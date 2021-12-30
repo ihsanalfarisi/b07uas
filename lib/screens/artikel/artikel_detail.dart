@@ -20,14 +20,13 @@ class DetailArtikelState extends State<DetailArtikel> {
   Future<void> fetchData() async {
     args = ModalRoute.of(context)!.settings.arguments;
     String id = args["id"];
-    String urlArtikel = 'http://127.0.0.1:8000/artikel/get-detail/' + id;
+    String urlArtikel =
+        'https://pbp-b07.herokuapp.com/artikel/get-detail/' + id;
     try {
-      print("fetching");
       final responseArtikel = await http.get(
         Uri.parse(urlArtikel),
         headers: <String, String>{'Content-Type': 'application/json;'},
       );
-      print("fetching1");
       _reviewArtikel = await jsonDecode(responseArtikel.body);
       print(_reviewArtikel.length);
       print(_reviewArtikel);
@@ -43,7 +42,6 @@ class DetailArtikelState extends State<DetailArtikel> {
           "date_published": element["fields"]["date_published"],
         });
       });
-      print(_dataArtikel.length);
     } catch (error) {
       print("error");
       print(error);
@@ -63,14 +61,16 @@ class DetailArtikelState extends State<DetailArtikel> {
             return Center(child: Text('Please wait its loading...'));
           } else {
             return Scaffold(
+                resizeToAvoidBottomInset: false,
                 appBar: AppBar(
                   title: Text(
                     'Artikel',
                     // artikel.judul,
                   ),
                 ),
-                body: Center(
-                    child: Container(
+                body: SingleChildScrollView(
+                    child: Center(
+                        child: Container(
                   margin: EdgeInsets.all(10),
                   alignment: Alignment.topCenter,
                   width: 350,
@@ -151,7 +151,7 @@ class DetailArtikelState extends State<DetailArtikel> {
                       ),
                     ],
                   ),
-                )));
+                ))));
           }
         });
   }

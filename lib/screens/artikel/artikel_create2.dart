@@ -25,7 +25,7 @@ class FormArtikelState extends State<FormArtikel> {
 
   Future<void> submit(BuildContext context) async {
     final response = await http.post(
-        Uri.parse('http://127.0.0.1:8000/artikel/create-artikel'),
+        Uri.parse('https://pbp-b07.herokuapp.com/artikel/create-artikel'),
         headers: <String, String>{'Content-Type': 'application/json'},
         body: jsonEncode(<String, dynamic>{
           'judul': judulField.text,

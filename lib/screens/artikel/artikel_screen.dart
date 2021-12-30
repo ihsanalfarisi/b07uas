@@ -2,6 +2,8 @@ import 'package:b07uas/widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import '../user.dart' as user;
+import 'package:b07uas/screens/login_screen.dart';
 
 class ListArtikel extends StatefulWidget {
   @override
@@ -16,7 +18,9 @@ class ListArtikelState extends State<ListArtikel> {
   FloatingActionButton _getArtikelFloatingActionButton(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        Navigator.pushNamed(context, '/tulis');
+        user.user[0]['status'] == 'logged off'
+            ? showAlertDialog(context)
+            : Navigator.pushNamed(context, '/tulis');
       },
       child: Icon(Icons.edit),
       foregroundColor: Colors.white,
@@ -24,16 +28,41 @@ class ListArtikelState extends State<ListArtikel> {
     );
   }
 
+  showAlertDialog(BuildContext context) {
+    // set up the button
+    Widget backButton = TextButton(
+      child: Text("Kembali"),
+      onPressed: () {
+        Navigator.pushReplacementNamed(context, '/artikel');
+      },
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("Peringatan"),
+      content: Text("Anda harus login terlebih dahulu"),
+      actions: [
+        backButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
   Future<void> fetchData() async {
-    String urlArtikel = 'http://127.0.0.1:8000/artikel/get-all-artikel';
+    String urlArtikel = 'https://pbp-b07.herokuapp.com/artikel/get-all-artikel';
     try {
       final responseArtikel = await http.get(
         Uri.parse(urlArtikel),
         headers: <String, String>{'Content-Type': 'application/json;'},
       );
       _reviewArtikel = await jsonDecode(responseArtikel.body);
-      print(_reviewArtikel.length);
-      print(_reviewArtikel);
       _dataArtikel = [];
       _reviewArtikel.forEach((element) {
         _dataArtikel.add({
@@ -55,8 +84,6 @@ class ListArtikelState extends State<ListArtikel> {
 
   @override
   Widget build(BuildContext context) {
-    print("masuk sini");
-    print(_dataArtikel.length);
     return FutureBuilder(
         future: fetchData(),
         builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
