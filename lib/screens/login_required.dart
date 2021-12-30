@@ -8,7 +8,7 @@ class CustomDialog extends StatelessWidget {
   CustomDialog({
     this.title = "Login",
     this.description =
-        "Kamu harus login terlebih dahulu untuk mengakses fitur ini",
+        "Anda harus login terlebih dahulu untuk mengakses fitur ini",
     this.buttonText = "Ok",
     // this.image = ""
   });
@@ -72,13 +72,10 @@ class CustomDialog extends StatelessWidget {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: FlatButton(
-                  color: Colors.blue,
+                  color: Colors.cyan,
                   onPressed: () {
                     // Navigator.of(context).pop();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()),
-                    );
+                    Navigator.pushNamed(context, "/login");
                   },
                   child: Text(
                     buttonText,
@@ -97,9 +94,14 @@ class CustomDialog extends StatelessWidget {
           child: CircleAvatar(
             backgroundColor: Colors.grey,
             radius: 80,
-            backgroundImage: NetworkImage(
-              '<https://upload.wikimedia.org/wikipedia/commons/1/1d/Rotating_Konarka_chaka.gif>',
+            child: Icon(
+              Icons.warning,
+              size: 100,
+              color: Colors.white,
             ),
+            // backgroundImage: NetworkImage(
+            //   '<https://upload.wikimedia.org/wikipedia/commons/1/1d/Rotating_Konarka_chaka.gif>',
+            // ),
           ),
         ),
       ],

@@ -76,7 +76,7 @@ class HomeScreen extends StatelessWidget {
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.white),
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.blue)),
+                              MaterialStateProperty.all<Color>(Colors.cyan)),
                     )
                   : Row(
                       mainAxisAlignment: MainAxisAlignment.center,

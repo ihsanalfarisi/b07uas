@@ -121,10 +121,11 @@ class _LoginPageState extends State<LoginPage> {
 // Login Button
                       Container(
                         width: double.infinity,
+                        height: 40,
                         child: TextButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                                Color.fromRGBO(204, 23, 40, 1)),
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(Colors.cyan),
                             foregroundColor:
                                 MaterialStateProperty.all<Color>(Colors.white),
                             overlayColor:
@@ -181,17 +182,17 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 10,
               ),
-              RichText(
-                text: TextSpan(
-                    text: "Belum memiliki akun?",
-                    style: TextStyle(
-                      color: Colors.black,
-                    ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        Navigator.popAndPushNamed(context, "/register");
-                      }),
-              ),
+              // RichText(
+              //   text: TextSpan(
+              //       text: "Belum memiliki akun?",
+              //       style: TextStyle(
+              //         color: Colors.black,
+              //       ),
+              //       recognizer: TapGestureRecognizer()
+              //         ..onTap = () {
+              //           Navigator.popAndPushNamed(context, "/register");
+              //         }),
+              // ),
             ],
           ),
         ),

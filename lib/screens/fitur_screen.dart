@@ -1,3 +1,8 @@
+import 'package:b07uas/screens/artikel/artikel_screen.dart';
+import 'package:b07uas/screens/get_swabbed/get_swabbed_screen.dart';
+import 'package:b07uas/screens/hotel/hotel_screen.dart';
+import 'package:b07uas/screens/regulasi/regulasi_screen.dart';
+import 'package:b07uas/screens/stat/loading.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/main_drawer.dart';
@@ -18,7 +23,7 @@ class FiturScreen extends StatelessWidget {
                   child: Text("SEPUTAR FITUR",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 28,
+                        fontSize: 25,
                         color: Colors.black,
                         fontWeight: FontWeight.w700,
                         letterSpacing: 2,
@@ -31,7 +36,9 @@ class FiturScreen extends StatelessWidget {
                     child: InkWell(
                       splashColor: Colors.blue.withAlpha(30),
                       onTap: () {
-                        print('Card tapped.');
+                        Navigator.of(context).pushReplacementNamed(
+                            Loading.routeName,
+                            arguments: {"userID": 1, "taks": "fetchData"});
                       },
                       child: SizedBox(
                         width: 300,
@@ -62,12 +69,16 @@ class FiturScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 15,
+                ),
                 Center(
                   child: Card(
                     child: InkWell(
                       splashColor: Colors.blue.withAlpha(30),
                       onTap: () {
-                        print('Card tapped.');
+                        Navigator.of(context)
+                            .pushReplacementNamed(RegulasiScreen.routeName);
                       },
                       child: SizedBox(
                         width: 300,
@@ -98,12 +109,16 @@ class FiturScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 15,
+                ),
                 Center(
                   child: Card(
                     child: InkWell(
                       splashColor: Colors.blue.withAlpha(30),
                       onTap: () {
-                        print('Card tapped.');
+                        Navigator.of(context)
+                            .pushReplacementNamed(SwabbedScreen.routeName);
                       },
                       child: SizedBox(
                         width: 300,
@@ -134,12 +149,16 @@ class FiturScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 15,
+                ),
                 Center(
                   child: Card(
                     child: InkWell(
                       splashColor: Colors.blue.withAlpha(30),
                       onTap: () {
-                        print('Card tapped.');
+                        Navigator.of(context)
+                            .pushReplacementNamed(HotelScreen.routeName);
                       },
                       child: SizedBox(
                         width: 300,
@@ -170,12 +189,16 @@ class FiturScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 15,
+                ),
                 Center(
                   child: Card(
                     child: InkWell(
                       splashColor: Colors.blue.withAlpha(30),
                       onTap: () {
-                        print('Card tapped.');
+                        Navigator.of(context)
+                            .pushReplacementNamed(ListArtikelState.routeName);
                       },
                       child: SizedBox(
                         width: 300,

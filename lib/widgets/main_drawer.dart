@@ -45,12 +45,6 @@ class _MainDrawerState extends State<MainDrawer> {
     });
   }
 
-  Widget _login() {
-    return buildListTile('Logout', Icons.logout, () {
-      Navigator.of(context).pushReplacementNamed('/');
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
