@@ -70,7 +70,7 @@ class SupportListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Formulir Keluhan")),
+        appBar: AppBar(title: Text("List Keluhan")),
         body: Center(
           child: FutureBuilder<List<Support>>(
             future: _fetchJobs(),
