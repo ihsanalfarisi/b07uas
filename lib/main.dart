@@ -1,3 +1,5 @@
+import 'package:b07uas/screens/support/form_screen.dart';
+import 'package:b07uas/screens/support/support_list_screen.dart';
 import 'package:flutter/material.dart';
 import '../screens/home_screen.dart';
 import '../screens/tabs_screen.dart';
@@ -59,7 +61,9 @@ class _MyAppState extends State<MyApp> {
         '/card-detail': (context) => CardDetail(),
         SupportScreen.routeName: (ctx) => SupportScreen(),
         DummyScreen.routeName: (ctx) => DummyScreen(),
-        LoginPage.routeName: (ctx) => LoginPage()
+        LoginPage.routeName: (ctx) => LoginPage(),
+        FormScreen.routeName: (ctx) => FormScreen(),
+        SupportListScreen.routeName: (ctx) => SupportListScreen(),
       },
       // ignore: missing_return
       onGenerateRoute: (settings) {
