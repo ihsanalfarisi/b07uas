@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, annotate_overrides
 
+import 'package:b07uas/screens/get_swabbed/swab_detail.dart';
 import 'package:b07uas/screens/support/form_screen.dart';
 import 'package:b07uas/screens/support/support_list_screen.dart';
 import 'package:flutter/material.dart';
@@ -57,6 +58,7 @@ class _MyAppState extends State<MyApp> {
         FormArtikel.namaRoute: (context) => FormArtikel(),
         DetailArtikelState.namaRoute: (context) => DetailArtikel(),
         FormSwabState.routeName: (ctx) => FormSwab(),
+        DetailSwabState.namaRoute: (ctx) => DetailSwab(),
         HotelScreen.routeName: (ctx) => HotelScreen(),
         RegulasiScreen.routeName: (ctx) => RegulasiScreen(),
         StatScreen.routeName: (ctx) => StatScreen(),
