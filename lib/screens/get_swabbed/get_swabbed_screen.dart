@@ -1,8 +1,8 @@
-import 'dart:convert';
-import 'dart:html';
+//import 'dart:convert';
+//import 'dart:html';
 import 'package:flutter/material.dart';
-import 'package:b07uas/widgets/main_drawer.dart';
-import 'package:http/http.dart' as http;
+//import 'package:b07uas/widgets/main_drawer.dart';
+//import 'package:http/http.dart' as http;
 
 class FormSwab extends StatefulWidget {
   static const routeName = '/swab';
@@ -16,6 +16,7 @@ class FormSwab extends StatefulWidget {
 class FormSwabState extends State<FormSwab> {
   static const routeName = '/get_swabbed';
 
+  // ignore: non_constant_identifier_names
   late String _Negara_tujuan;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -46,6 +47,7 @@ class FormSwabState extends State<FormSwab> {
   //   return;
   // }
 
+    // ignore: non_constant_identifier_names
     Widget _buildNegara_tujuan() {
       return TextFormField(
         decoration: InputDecoration(labelText: 'Negara tujuan yang tersedia: Malaysia | Singapura | Thailand'),
