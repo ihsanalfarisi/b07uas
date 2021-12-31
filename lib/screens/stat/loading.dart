@@ -3,6 +3,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../login_required.dart';
 import '../user.dart' as user;
@@ -107,18 +108,13 @@ class _LoadingState extends State<Loading> {
       fetchData();
     }
     return Scaffold(
-      body: user.user[0]['status'] == 'logged off'
-          ? Center(child: CustomDialog())
-          : Container(
-              child: const Center(
-                  child: Image(
-                image: NetworkImage(
-                    "https://c.tenor.com/0iK9a1WkT40AAAAC/loading-white.gif"),
-                height: 445,
-                width: 400,
-                fit: BoxFit.cover,
-              )),
-            ),
-    );
+        body: user.user[0]['status'] == 'logged off'
+            ? Center(child: CustomDialog())
+            : Center(
+                child: SpinKitRotatingCircle(
+                  color: Colors.blue,
+                  size: 80.0,
+                ),
+              ));
   }
 }
