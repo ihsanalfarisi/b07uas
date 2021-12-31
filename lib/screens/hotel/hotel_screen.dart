@@ -6,6 +6,8 @@ import 'package:b07uas/widgets/main_drawer.dart';
 import 'hotel.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:b07uas/screens/user.dart' as user;
+import 'package:b07uas/screens/login_required.dart';
 
 class HotelScreen extends StatefulWidget {
   static const routeName = '/hotel';
@@ -312,11 +314,12 @@ class _HotelScreenState extends State<HotelScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(title: const Text("Info Hotel Karantina")),
-          drawer: MainDrawer(),
-          body: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(title: const Text("Info Hotel Karantina")),
+      drawer: MainDrawer(),
+      body: user.user[0]['status'] == 'logged off'
+          ? Center(child: CustomDialog())
+          : SingleChildScrollView(
               child: Container(
                   margin: const EdgeInsets.all(24),
                   child: Form(
@@ -374,7 +377,7 @@ class _HotelScreenState extends State<HotelScreen> {
                                                 ? _HotelThailand()
                                                 // ? FetchHotelThai()
                                                 : null),
-                          ]))))),
+                          ])))),
     );
   }
 }
