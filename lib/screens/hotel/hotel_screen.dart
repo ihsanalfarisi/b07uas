@@ -1,4 +1,4 @@
-// ignore_for_file: sort_constructors_first, non_constant_identifier_names, only_throw_errors
+// ignore_for_file: sort_constructors_first, non_constant_identifier_names, only_throw_errors, unused_field
 
 import 'package:flutter/material.dart';
 import 'package:b07uas/widgets/main_drawer.dart';
@@ -71,15 +71,6 @@ class _HotelScreenState extends State<HotelScreen> {
       forceWebView: true,
       headers: <String, String>{'my_header_key': 'my_header_value'},
     )) {
-      throw 'Could not launch $url';
-    }
-  }
-
-  _launchURL() async {
-    const url = 'https://flutter.io';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
       throw 'Could not launch $url';
     }
   }
