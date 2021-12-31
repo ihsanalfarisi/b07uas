@@ -1,7 +1,7 @@
 //import 'dart:convert';
 //import 'dart:html';
 import 'package:flutter/material.dart';
-//import 'package:b07uas/widgets/main_drawer.dart';
+import 'package:b07uas/widgets/main_drawer.dart';
 //import 'package:http/http.dart' as http;
 
 class FormSwab extends StatefulWidget {
@@ -71,6 +71,7 @@ class FormSwabState extends State<FormSwab> {
         appBar: AppBar(
           title: Text("Get Swabbed"),
         ),
+        drawer: const MainDrawer(),
         body: SingleChildScrollView(
           child: Container(
             margin: EdgeInsets.all(24),
