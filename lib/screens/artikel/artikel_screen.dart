@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import '../user.dart' as user;
-
-import 'package:b07uas/screens/login_screen.dart';
 
 class ListArtikel extends StatefulWidget {
   @override
