@@ -1,7 +1,6 @@
 // ignore_for_file: sort_constructors_first, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
-
 import 'package:b07uas/widgets/main_drawer.dart';
 import 'hotel.dart';
 import 'package:http/http.dart' as http;
@@ -42,7 +41,7 @@ class _HotelScreenState extends State<HotelScreen> {
     }
   }
 
-  Widget _buildNegara() {
+  Widget _buildForm() {
     return TextFormField(
       decoration: InputDecoration(
         labelText: 'Pilih Negara',
@@ -63,71 +62,7 @@ class _HotelScreenState extends State<HotelScreen> {
     );
   }
 
-  Widget _HotelIndonesia() {
-    return Column(
-      children: [
-        Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text("Hotel Karantina Terbaik di ",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 0,
-                    wordSpacing: 3,
-                  )),
-              const SizedBox(
-                width: 3,
-              ),
-              const Text("Indonesia",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.cyan,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 0,
-                    wordSpacing: 3,
-                  ))
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: isLoading
-              ? Center(
-                  child: CircularProgressIndicator(),
-                )
-              : SingleChildScrollView(
-                  child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: list.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        if (list[index].country! == 'Indonesia') {
-                          return Card(
-                            child: ListTile(
-                              leading: Image.network(list[index].foto!),
-                              title: Text(list[index].namaHotel!),
-                              subtitle: Text('Harga: ' + list[index].harga!),
-                              trailing: Icon(Icons.more_vert),
-                              isThreeLine: true,
-                            ),
-                          );
-                        } else {
-                          return SizedBox(
-                            height: 0.1,
-                          );
-                        }
-                      }),
-                ),
-        )
-      ],
-    );
-  }
-
-  Widget _HotelSingapore() {
+  Widget _HotelCard(String? country) {
     return Column(children: [
       Container(
         child: Row(
@@ -145,7 +80,7 @@ class _HotelScreenState extends State<HotelScreen> {
             const SizedBox(
               width: 3,
             ),
-            const Text("Singapore",
+            Text('$country',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.cyan,
@@ -168,131 +103,7 @@ class _HotelScreenState extends State<HotelScreen> {
                     shrinkWrap: true,
                     itemCount: list.length,
                     itemBuilder: (BuildContext context, int index) {
-                      if (list[index].country! == 'Singapore') {
-                        return Card(
-                          child: ListTile(
-                            leading: Image.network(list[index].foto!),
-                            title: Text(list[index].namaHotel!),
-                            subtitle: Text('Harga: ' + list[index].harga!),
-                            trailing: Icon(Icons.more_vert),
-                            isThreeLine: true,
-                          ),
-                        );
-                      } else {
-                        return SizedBox(
-                          height: 0.1,
-                        );
-                      }
-                    }),
-              ),
-      )
-    ]);
-  }
-
-  Widget _HotelMalaysia() {
-    return Column(children: [
-      Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text("Hotel Karantina Terbaik di ",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 0,
-                  wordSpacing: 3,
-                )),
-            const SizedBox(
-              width: 3,
-            ),
-            const Text("Malaysia",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.cyan,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 0,
-                  wordSpacing: 3,
-                ))
-          ],
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: isLoading
-            ? Center(
-                child: CircularProgressIndicator(),
-              )
-            : SingleChildScrollView(
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: list.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      if (list[index].country! == 'Malaysia') {
-                        return Card(
-                          child: ListTile(
-                            leading: Image.network(list[index].foto!),
-                            title: Text(list[index].namaHotel!),
-                            subtitle: Text('Harga: ' + list[index].harga!),
-                            trailing: Icon(Icons.more_vert),
-                            isThreeLine: true,
-                          ),
-                        );
-                      } else {
-                        return SizedBox(
-                          height: 0.1,
-                        );
-                      }
-                    }),
-              ),
-      )
-    ]);
-  }
-
-  Widget _HotelThailand() {
-    return Column(children: [
-      Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text("Hotel Karantina Terbaik di ",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 0,
-                  wordSpacing: 3,
-                )),
-            const SizedBox(
-              width: 3,
-            ),
-            const Text("Thailand",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.cyan,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 0,
-                  wordSpacing: 3,
-                ))
-          ],
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: isLoading
-            ? Center(
-                child: CircularProgressIndicator(),
-              )
-            : SingleChildScrollView(
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: list.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      if (list[index].country! == 'Thailand') {
+                      if (list[index].country! == country) {
                         return Card(
                           child: ListTile(
                             leading: Image.network(list[index].foto!),
@@ -354,7 +165,7 @@ class _HotelScreenState extends State<HotelScreen> {
                                   fontSize: 15,
                                 )),
                             const SizedBox(height: 10),
-                            _buildNegara(),
+                            _buildForm(),
                             ElevatedButton(
                               child: const Text(
                                 'Submit',
@@ -375,19 +186,15 @@ class _HotelScreenState extends State<HotelScreen> {
                               height: 20,
                             ),
                             Container(
-                                child: _Negara == "Indonesia"
-                                    ? _HotelIndonesia()
-                                    : _Negara == "Singapore"
-                                        ? _HotelSingapore()
-                                        : _Negara == "Malaysia"
-                                            ? _HotelMalaysia()
-                                            : _Negara == "Thailand"
-                                                ? _HotelThailand()
-                                                // ? FetchHotelThai()
-                                                : _Negara != ""
-                                                    ? Text(
-                                                        "Harap ketik negara yang sesuai.")
-                                                    : null),
+                                child: (_Negara == "Indonesia" ||
+                                        _Negara == "Singapore" ||
+                                        _Negara == "Malaysia" ||
+                                        _Negara == "Thailand")
+                                    ? _HotelCard(_Negara)
+                                    : _Negara != null
+                                        ? Text(
+                                            "Harap ketik negara yang sesuai.")
+                                        : null),
                           ])))),
     );
   }
