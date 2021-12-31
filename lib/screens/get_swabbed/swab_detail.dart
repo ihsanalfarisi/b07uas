@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import '../user.dart' as user;
+import 'package:b07uas/screens/login_required.dart';
 
 class DetailSwab extends StatefulWidget {
   const DetailSwab({Key? key}) : super(key: key);
@@ -13,11 +15,7 @@ class DetailSwabState extends State<DetailSwab> {
   late var args;
   late List<dynamic> _detailGetS;
   late List<dynamic> _dataSwab = [];
-  // // In the constructor, require a Todo.
-  // const DetailScreen({Key? key, required this.artikel}) : super(key: key);
 
-  // // Declare a field that holds the Todo.
-  // final Artikel artikel;
   Future<void> fetchData() async {
     args = ModalRoute.of(context)!.settings.arguments;
     String id = args["id"];
@@ -53,35 +51,37 @@ class DetailSwabState extends State<DetailSwab> {
     args = ModalRoute.of(context)!.settings.arguments;
     String id = args["id"];
     print(id);
-    return FutureBuilder(
-        future: fetchData(),
-        builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: Text('Please wait its loading...'));
-          } else {
-            print("masuk");
-            return Scaffold(
-              appBar: AppBar(
-                title: Text('Detail ' + id),
-              ),
-              body: ListView.separated(
-                  separatorBuilder: (context, index) {
-                    return Divider(
-                      color: Colors.white,
-                      thickness: 20,
-                    );
-                  },
-                  itemCount: _dataSwab.length,
-                  itemBuilder: (context, index) {
-                    return IceCreamCard(
-                      cName: _dataSwab[index]["CountryName"].toString(),
-                      swabSpot: _dataSwab[index]["SwabSpot"],
-                      address: _dataSwab[index]["Address"],
-                    );
-                  }),
-            );
-          }
-        });
+    return user.user[0]['status'] == 'logged off'
+        ? Center(child: CustomDialog())
+        : FutureBuilder(
+            future: fetchData(),
+            builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Center(child: Text('Please wait its loading...'));
+              } else {
+                print("masuk");
+                return Scaffold(
+                  appBar: AppBar(
+                    title: Text('Detail ' + id),
+                  ),
+                  body: ListView.separated(
+                      separatorBuilder: (context, index) {
+                        return Divider(
+                          color: Colors.white,
+                          thickness: 20,
+                        );
+                      },
+                      itemCount: _dataSwab.length,
+                      itemBuilder: (context, index) {
+                        return IceCreamCard(
+                          cName: _dataSwab[index]["CountryName"].toString(),
+                          swabSpot: _dataSwab[index]["SwabSpot"],
+                          address: _dataSwab[index]["Address"],
+                        );
+                      }),
+                );
+              }
+            });
   }
 
 //sumber: https://docs.flutter.dev/cookbook/navigation/passing-data
