@@ -28,8 +28,6 @@ class _LoadingState extends State<Loading> {
         'https://pbp-b07.herokuapp.com/stat-covid/get-country/' +
             args["userID"].toString();
     try {
-      print("fetching");
-      print(globals.isFetched);
       if (!globals.isFetched) {
         final responseCovid = await http.get(Uri.parse(urlCovid));
         globals.data = await jsonDecode(responseCovid.body);
@@ -88,15 +86,12 @@ class _LoadingState extends State<Loading> {
           });
         }
       });
-      print(args);
-      print("fetched");
       Navigator.pushReplacementNamed(context, "/stat", arguments: {
         "userID": args["userID"],
         // "_data": _data,
         "_cardTemplates": _cardTemplates.reversed.toList()
       });
     } catch (error) {
-      print("error");
       print(error);
     }
   }
