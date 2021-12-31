@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:b07uas/widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
 import 'card_template.dart';
@@ -7,10 +5,11 @@ import 'package:intl/intl.dart';
 import 'globals.dart' as globals;
 
 import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 class StatScreen extends StatefulWidget {
   static const routeName = '/stat';
+
+  const StatScreen({Key? key}) : super(key: key);
 
   @override
   State<StatScreen> createState() => _StatScreenState();
@@ -59,9 +58,9 @@ class _StatScreenState extends State<StatScreen> {
         ),
       ),
       appBar: AppBar(
-        title: Text('Info Statistik'),
+        title: const Text('Info Statistik'),
       ),
-      drawer: MainDrawer(),
+      drawer: const MainDrawer(),
       body: ListView(
         children: [
           const Padding(
@@ -175,7 +174,7 @@ class _StatScreenState extends State<StatScreen> {
                     });
                   },
                   data: _cardTemplates[index]["id"],
-                  childWhenDragging: Card(),
+                  childWhenDragging: const Card(),
                   feedback: CardTemplate(
                     id: _cardTemplates[index]["id"],
                     imageLink: _cardTemplates[index]["imageLink"],

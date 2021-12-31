@@ -51,10 +51,8 @@ class _AddCountryState extends State<AddCountry> {
                               await http.get(Uri.parse(urlAddCountry));
                           List<dynamic> responseJSON =
                               await jsonDecode(response.body);
-                          print(responseJSON);
                           Navigator.pop(context, responseJSON[0]);
                         } catch (error) {
-                          print("error add");
                           print(error);
                         }
                       },
