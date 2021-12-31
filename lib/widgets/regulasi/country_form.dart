@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:b07uas/model/regulasi/regulasi_country.dart';
-import 'package:b07uas/model/regulasi/regulasi_data.dart' as data;
+import 'package:b07uas/models/regulasi_country.dart';
+import 'package:b07uas/models/regulasi_data.dart' as data;
 import 'package:b07uas/screens/regulasi/regulasi_detail.dart';
 
 class CountryForm extends StatefulWidget {

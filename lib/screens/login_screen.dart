@@ -158,6 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                               if (dataJSON["status"] == "logged in") {
                                 user.user.insert(0, dataJSON);
                                 print(user.user[0]['status']);
+                                print(user.user[0]);
                                 Navigator.pushNamed(context, "/", arguments: {
                                   "userID": dataJSON["userID"],
                                   "task": "fetchData"

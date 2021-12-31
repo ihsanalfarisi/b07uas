@@ -30,6 +30,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Safe Flight',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.cyan,
         colorScheme: theme.colorScheme.copyWith(secondary: Colors.white),

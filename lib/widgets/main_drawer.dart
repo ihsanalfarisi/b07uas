@@ -39,7 +39,7 @@ class _MainDrawerState extends State<MainDrawer> {
 
   Widget _logout() {
     return buildListTile('Logout', Icons.logout, () {
-      user.user.insert(0, {'status': "logged off"});
+      user.user.insert(0, {'status': "logged off", "userID": -1});
       print(user.user[0]['status']);
       Navigator.of(context).pushReplacementNamed('/');
     });
@@ -80,7 +80,10 @@ class _MainDrawerState extends State<MainDrawer> {
           buildListTile('Info Statistik', Icons.insert_chart, () {
             // karena login belom ada userID nya 1 dulu
             Navigator.of(context).pushReplacementNamed(Loading.routeName,
-                arguments: {"userID": 1, "task": "fetchData"});
+                arguments: {
+                  "userID": user.user[0]['userID'],
+                  "task": "fetchData"
+                });
           }),
           buildListTile('Regulasi', Icons.fact_check, () {
             Navigator.of(context)

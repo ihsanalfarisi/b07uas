@@ -3,6 +3,7 @@ import 'package:b07uas/screens/get_swabbed/get_swabbed_screen.dart';
 import 'package:b07uas/screens/hotel/hotel_screen.dart';
 import 'package:b07uas/screens/regulasi/regulasi_screen.dart';
 import 'package:b07uas/screens/stat/loading.dart';
+import 'package:b07uas/screens/user.dart' as user;
 import 'package:flutter/material.dart';
 
 import '../widgets/main_drawer.dart';
@@ -38,7 +39,10 @@ class FiturScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.of(context).pushReplacementNamed(
                             Loading.routeName,
-                            arguments: {"userID": 1, "taks": "fetchData"});
+                            arguments: {
+                              "userID": user.user[0]['userID'],
+                              "taks": "fetchData"
+                            });
                       },
                       child: SizedBox(
                         width: 300,
