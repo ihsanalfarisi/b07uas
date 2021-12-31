@@ -44,15 +44,18 @@ class FiturScreen extends StatelessWidget {
                         width: 300,
                         height: 100,
                         child: Column(children: [
-                          Text('Info Statistik',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: 1,
-                                wordSpacing: 5,
-                              )),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('Info Statistik',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 1,
+                                  wordSpacing: 5,
+                                )),
+                          ),
                           SizedBox(height: 10),
                           Text(
                               'Kumpulan statistik mengenai jumlah kasus, vaksin, dan kematian akibat COVID-19 pada berbagai negara',
@@ -84,15 +87,18 @@ class FiturScreen extends StatelessWidget {
                         width: 300,
                         height: 100,
                         child: Column(children: [
-                          Text('Regulasi',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: 1,
-                                wordSpacing: 5,
-                              )),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('Regulasi',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 1,
+                                  wordSpacing: 5,
+                                )),
+                          ),
                           SizedBox(height: 10),
                           Text(
                               'Kumpulan informasi mengenai kebijakan dan persyaratan untuk mengunjungi negara destinasi',
@@ -124,15 +130,18 @@ class FiturScreen extends StatelessWidget {
                         width: 300,
                         height: 100,
                         child: Column(children: [
-                          Text('Get Swabbed!',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: 1,
-                                wordSpacing: 5,
-                              )),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('Get Swabbed!',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 1,
+                                  wordSpacing: 5,
+                                )),
+                          ),
                           SizedBox(height: 10),
                           Text(
                               'Menyediakan daftar fasilitas tes covid-19 terdekat dari bandara utama di negara tujuan',
@@ -164,15 +173,18 @@ class FiturScreen extends StatelessWidget {
                         width: 300,
                         height: 100,
                         child: Column(children: [
-                          Text('Info Hotel Karantina',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: 1,
-                                wordSpacing: 5,
-                              )),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('Info Hotel Karantina',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 1,
+                                  wordSpacing: 5,
+                                )),
+                          ),
                           SizedBox(height: 10),
                           Text(
                               'Temukan hotel karantina terbaik di negara tujuanmu! Kenyamananmu adalah prioritas kami',
@@ -204,15 +216,18 @@ class FiturScreen extends StatelessWidget {
                         width: 300,
                         height: 100,
                         child: Column(children: [
-                          Text('Artikel',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: 1,
-                                wordSpacing: 5,
-                              )),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('Artikel',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 1,
+                                  wordSpacing: 5,
+                                )),
+                          ),
                           SizedBox(height: 10),
                           Text(
                               'Artikel dan penulisan artikel terkait traveling saat pandemi.',

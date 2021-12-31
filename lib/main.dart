@@ -25,12 +25,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final ThemeData theme = ThemeData();
+
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Safe Flight',
       theme: ThemeData(
         primarySwatch: Colors.cyan,
-        accentColor: Colors.white,
+        colorScheme: theme.colorScheme.copyWith(secondary: Colors.white),
         canvasColor: Colors.white,
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
