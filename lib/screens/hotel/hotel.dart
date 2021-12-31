@@ -1,3 +1,5 @@
+// ignore_for_file: sort_constructors_first
+
 class Hotel {
   final String? namaHotel;
   final String? foto;

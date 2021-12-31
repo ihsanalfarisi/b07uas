@@ -1,3 +1,5 @@
+// ignore_for_file: sort_constructors_first, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 import 'package:b07uas/widgets/main_drawer.dart';
@@ -58,7 +60,6 @@ class _HotelScreenState extends State<HotelScreen> {
     );
   }
 
-  // ignore: non_constant_identifier_names
   Widget _HotelIndonesia() {
     return Column(
       children: [
@@ -314,6 +315,7 @@ class _HotelScreenState extends State<HotelScreen> {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(title: const Text("Info Hotel Karantina")),
+          drawer: MainDrawer(),
           body: SingleChildScrollView(
               child: Container(
                   margin: const EdgeInsets.all(24),
