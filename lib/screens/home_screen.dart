@@ -10,37 +10,28 @@ class HomeScreen extends StatelessWidget {
     return ListView(children: [
       Column(
         children: <Widget>[
-          CarouselSlider(
-            options: CarouselOptions(height: 200),
-            items: [
-              Image.network(
-                  'https://wowslider.com/sliders/demo-93/data1/images/sunset.jpg',
-                  height: 150,
-                  width: 250),
-              Image.network(
-                  'https://wowslider.com/sliders/demo-93/data1/images/sunset.jpg',
-                  height: 50,
-                  width: 250),
-              Image(
-                  image: NetworkImage(
-                      'https://wowslider.com/sliders/demo-93/data1/images/sunset.jpg')),
-              Image(
-                  image: NetworkImage(
-                      'https://wowslider.com/sliders/demo-93/data1/images/sunset.jpg')),
-              Image(
-                  image: NetworkImage(
-                      'https://wowslider.com/sliders/demo-93/data1/images/sunset.jpg')),
-            ].map((i) {
-              return Builder(
-                builder: (BuildContext context) {
-                  return Container(
-                      padding: EdgeInsets.all(10),
-                      width: MediaQuery.of(context).size.width,
-                      child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20.0), child: i));
-                },
-              );
-            }).toList(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CarouselSlider(
+              options: CarouselOptions(height: 200),
+              items: [
+                Image.asset('assets/images/traveling1.jpg'),
+                Image.asset('assets/images/traveling5.jpg'),
+                Image.asset('assets/images/traveling6.jpg'),
+                Image.asset('assets/images/traveling7.jpg'),
+              ].map((i) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return Container(
+                        padding: EdgeInsets.all(10),
+                        width: MediaQuery.of(context).size.width,
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: i));
+                  },
+                );
+              }).toList(),
+            ),
           ),
           Container(
               child: Text("SAFE FLIGHT",

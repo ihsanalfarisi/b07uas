@@ -99,9 +99,6 @@ class _MainDrawerState extends State<MainDrawer> {
           buildListTile('Support', Icons.help, () {
             Navigator.of(context).pushReplacementNamed(SupportScreen.routeName);
           }),
-          buildListTile('Dummy', Icons.assessment, () {
-            Navigator.of(context).pushReplacementNamed(DummyScreen.routeName);
-          }),
           Container(
               child: user.user[0]['status'] == 'logged off' ? null : _logout())
         ],
