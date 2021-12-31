@@ -51,14 +51,14 @@ class _TabsScreenState extends State<TabsScreen> {
         // type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            backgroundColor: Theme.of(context).accentColor,
+            backgroundColor: Colors.white,
             icon: Icon(Icons.home),
-            title: Text('Beranda'),
+            label: 'Beranda',
           ),
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.widgets),
-            title: Text('Fitur'),
+            label: 'Fitur',
           ),
         ],
       ),

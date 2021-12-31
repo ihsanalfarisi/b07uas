@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, annotate_overrides
 
 import 'package:b07uas/screens/support/form_screen.dart';
 import 'package:b07uas/screens/support/support_list_screen.dart';
