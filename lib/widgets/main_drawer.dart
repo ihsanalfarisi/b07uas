@@ -1,4 +1,3 @@
-import 'package:b07uas/screens/login_screen.dart';
 import 'package:b07uas/screens/stat/loading.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +6,6 @@ import './/screens/dummy_screen.dart';
 import '../screens/get_swabbed/get_swabbed_screen.dart';
 import '../screens/hotel/hotel_screen.dart';
 import '../screens/regulasi/regulasi_screen.dart';
-import '../screens/stat/statistik_screen.dart';
 import '../screens/support/support_screen.dart';
 import '../screens/user.dart' as user;
 

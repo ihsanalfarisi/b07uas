@@ -6,8 +6,6 @@ import 'package:b07uas/screens/stat/loading.dart';
 import 'package:b07uas/screens/user.dart' as user;
 import 'package:flutter/material.dart';
 
-import '../widgets/main_drawer.dart';
-
 class FiturScreen extends StatelessWidget {
   static const routeName = '/fitur';
 

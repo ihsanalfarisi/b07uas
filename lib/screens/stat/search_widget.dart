@@ -1,3 +1,5 @@
+// ignore_for_file: sort_constructors_first
+
 import 'package:flutter/material.dart';
 
 // diambil dari https://github.com/JohannesMilke/filter_listview_example/blob/master/lib/widget/search_widget.dart

@@ -1,4 +1,4 @@
-import 'package:b07uas/screens/login_screen.dart';
+import 'login_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
