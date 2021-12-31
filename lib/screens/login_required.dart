@@ -69,8 +69,7 @@ class CustomDialog extends StatelessWidget {
               SizedBox(height: 24.0),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: FlatButton(
-                  color: Colors.cyan,
+                child: TextButton(
                   onPressed: () {
                     Navigator.pushNamed(context, "/login");
                   },
