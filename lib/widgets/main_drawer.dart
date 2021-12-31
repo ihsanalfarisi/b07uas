@@ -1,4 +1,3 @@
-import 'package:b07uas/screens/login_screen.dart';
 import 'package:b07uas/screens/stat/loading.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +6,6 @@ import './/screens/dummy_screen.dart';
 import '../screens/get_swabbed/get_swabbed_screen.dart';
 import '../screens/hotel/hotel_screen.dart';
 import '../screens/regulasi/regulasi_screen.dart';
-import '../screens/stat/statistik_screen.dart';
 import '../screens/support/support_screen.dart';
 import '../screens/user.dart' as user;
 
@@ -39,14 +37,8 @@ class _MainDrawerState extends State<MainDrawer> {
 
   Widget _logout() {
     return buildListTile('Logout', Icons.logout, () {
-      user.user.insert(0, {'status': "logged off"});
+      user.user.insert(0, {'status': "logged off", "userID": -1});
       print(user.user[0]['status']);
-      Navigator.of(context).pushReplacementNamed('/');
-    });
-  }
-
-  Widget _login() {
-    return buildListTile('Logout', Icons.logout, () {
       Navigator.of(context).pushReplacementNamed('/');
     });
   }
@@ -86,7 +78,10 @@ class _MainDrawerState extends State<MainDrawer> {
           buildListTile('Info Statistik', Icons.insert_chart, () {
             // karena login belom ada userID nya 1 dulu
             Navigator.of(context).pushReplacementNamed(Loading.routeName,
-                arguments: {"userID": 1, "task": "fetchData"});
+                arguments: {
+                  "userID": user.user[0]['userID'],
+                  "task": "fetchData"
+                });
           }),
           buildListTile('Regulasi', Icons.fact_check, () {
             Navigator.of(context)

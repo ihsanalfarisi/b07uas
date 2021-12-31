@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
@@ -137,12 +139,12 @@ class FormArtikelState extends State<FormArtikel> {
                   _buildDeskripsi(),
                   _buildIsi(),
                   SizedBox(height: 20),
-                  RaisedButton(
+                  ElevatedButton(
                     child: Text(
                       'Submit',
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
-                    color: Colors.blue,
+                    //color: Colors.blue,
                     onPressed: () {
                       if (_formKey.currentState?.validate() ?? true) {
                         showConfirmDialog(context);

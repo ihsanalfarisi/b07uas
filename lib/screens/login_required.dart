@@ -1,4 +1,5 @@
-import 'package:b07uas/screens/home_screen.dart';
+// ignore_for_file: sort_constructors_first
+
 import 'package:flutter/material.dart';
 
 class CustomDialog extends StatelessWidget {
@@ -8,7 +9,7 @@ class CustomDialog extends StatelessWidget {
   CustomDialog({
     this.title = "Login",
     this.description =
-        "Kamu harus login terlebih dahulu untuk mengakses fitur ini",
+        "Anda harus login terlebih dahulu untuk mengakses fitur ini",
     this.buttonText = "Ok",
     // this.image = ""
   });
@@ -37,7 +38,7 @@ class CustomDialog extends StatelessWidget {
           ),
           margin: EdgeInsets.only(top: 66.0),
           decoration: new BoxDecoration(
-            color: Colors.grey[200], //Colors.black.withOpacity(0.3),
+            color: Colors.grey[200],
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(16.0),
             boxShadow: [
@@ -49,14 +50,13 @@ class CustomDialog extends StatelessWidget {
             ],
           ),
           child: Column(
-            mainAxisSize: MainAxisSize.min, // To make the card compact
+            mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text(
                 title,
                 style: TextStyle(
                   fontSize: 24.0,
                   fontWeight: FontWeight.w700,
-                  // color: Colors.black,
                 ),
               ),
               SizedBox(height: 16.0),
@@ -65,20 +65,14 @@ class CustomDialog extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16.0,
-                  // color: Colors.white70,
                 ),
               ),
               SizedBox(height: 24.0),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: FlatButton(
-                  color: Colors.blue,
+                child: TextButton(
                   onPressed: () {
-                    // Navigator.of(context).pop();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()),
-                    );
+                    Navigator.pushNamed(context, "/login");
                   },
                   child: Text(
                     buttonText,
@@ -97,8 +91,10 @@ class CustomDialog extends StatelessWidget {
           child: CircleAvatar(
             backgroundColor: Colors.grey,
             radius: 80,
-            backgroundImage: NetworkImage(
-              '<https://upload.wikimedia.org/wikipedia/commons/1/1d/Rotating_Konarka_chaka.gif>',
+            child: Icon(
+              Icons.warning,
+              size: 100,
+              color: Colors.white,
             ),
           ),
         ),

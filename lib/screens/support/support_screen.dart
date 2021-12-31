@@ -1,9 +1,11 @@
+import 'package:b07uas/screens/login_required.dart';
+import 'package:b07uas/screens/user.dart' as user;
 import 'package:b07uas/widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
- 
+
 class SupportScreen extends StatelessWidget {
   static const routeName = '/support';
- 
+
   @override
   Widget build(BuildContext ctx) {
     return Scaffold(
@@ -11,31 +13,34 @@ class SupportScreen extends StatelessWidget {
         title: Text('Support'),
       ),
       drawer: MainDrawer(),
-      body: Column(
+      body: user.user[0]['status'] == 'logged off'
+      ? Center(
+        child: CustomDialog()
+      )
+      : Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
               width: 300,
-              margin: EdgeInsets.symmetric(vertical: 32.0, horizontal: 0.0),
+              margin: EdgeInsets.symmetric(vertical: 60.0, horizontal: 0.0),
               alignment: Alignment.topCenter,
               child: Column(
-                children: <Widget>[
-                  Text(
-                    "Ada Keluhan?",
-                    textAlign: TextAlign.center,
-                    style: Theme.of(ctx).textTheme.headline4,
-                  ),
-                  SizedBox(height: 48),
-                  Text(
-                    'Klik tombol dibawah ini untuk melaporkan keluhanmu!',
-                    textAlign: TextAlign.center,
-                    style: new TextStyle(
-                      fontSize: 18.0,
-                    ),
-                  ),
-              ])),
+                  children: <Widget>[
+                    Text("Ada Keluhan?\n",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                        textAlign: TextAlign.center),
+                    SizedBox(height: 16),
+                    Text("Klik tombol dibawah ini untuk melaporkan keluhanmu!",
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                        textAlign: TextAlign.center),
+                  ])),
           Center(
             child: ElevatedButton(
               onPressed: () {
@@ -64,4 +69,3 @@ class SupportScreen extends StatelessWidget {
     );
   }
 }
- 

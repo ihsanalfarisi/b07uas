@@ -37,7 +37,7 @@ class _CardDetailState extends State<CardDetail> {
         itemBuilder: (context) => <PopupMenuEntry>[
           PopupMenuItem(
             enabled: kasusPositif,
-            child: Text("Kasus Positif"),
+            child: const Text("Kasus Positif"),
             onTap: () {
               setState(() {
                 kasusPositif = false;
@@ -50,7 +50,7 @@ class _CardDetailState extends State<CardDetail> {
           ),
           PopupMenuItem(
             enabled: vaksinasi,
-            child: Text("Vaksinasi"),
+            child: const Text("Vaksinasi"),
             onTap: () {
               setState(() {
                 kasusPositif = true;
@@ -63,7 +63,7 @@ class _CardDetailState extends State<CardDetail> {
           ),
           PopupMenuItem(
             enabled: kasusKematian,
-            child: Text("Kasus Kematian"),
+            child: const Text("Kasus Kematian"),
             onTap: () {
               setState(() {
                 kasusPositif = true;
@@ -75,7 +75,7 @@ class _CardDetailState extends State<CardDetail> {
             },
           ),
           PopupMenuItem(
-            child: Text("Back"),
+            child: const Text("Back"),
             onTap: () {
               Navigator.pop(context);
             },

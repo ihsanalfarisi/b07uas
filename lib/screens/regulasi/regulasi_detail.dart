@@ -1,5 +1,7 @@
+// ignore_for_file: sort_constructors_first
+
 import 'package:flutter/material.dart';
-import 'package:b07uas/model/regulasi/regulasi_data.dart' as data;
+import 'package:b07uas/models/regulasi_data.dart' as data;
 
 class RegulateDetailScreen extends StatefulWidget {
   final String country;
@@ -545,7 +547,7 @@ class _RegulateDetailScreenState extends State<RegulateDetailScreen> {
                                   padding: EdgeInsets.only(left: 25),
                                   child: Column(
                                     crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         data.contents[2].beforeArrival[1],
@@ -661,8 +663,6 @@ class _RegulateDetailScreenState extends State<RegulateDetailScreen> {
                               ],
                             ),
                           )
-                        : const Center()
-                      )
-                    );
+                        : const Center()));
   }
 }

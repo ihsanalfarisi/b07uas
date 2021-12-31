@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, annotate_overrides
+
 import 'package:b07uas/screens/support/form_screen.dart';
 import 'package:b07uas/screens/support/support_list_screen.dart';
 import 'package:flutter/material.dart';
@@ -25,12 +27,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final ThemeData theme = ThemeData();
+
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Safe Flight',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.cyan,
-        accentColor: Colors.white,
+        colorScheme: theme.colorScheme.copyWith(secondary: Colors.white),
         canvasColor: Colors.white,
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
