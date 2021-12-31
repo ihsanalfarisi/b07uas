@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:b07uas/screens/support/form_screen.dart';
 import 'package:b07uas/screens/support/support_list_screen.dart';
 import 'package:flutter/material.dart';
