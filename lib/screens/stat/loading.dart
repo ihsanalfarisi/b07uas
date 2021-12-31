@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
+import '../login_required.dart';
+import '../user.dart' as user;
 import 'globals.dart' as globals;
 import 'package:intl/intl.dart';
 
@@ -104,20 +106,22 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     args = ModalRoute.of(context)!.settings.arguments;
-    if (args["task"] == "fetchData") {
+    if (user.user[0]['status'] == 'logged in') {
       fetchData();
     }
     return Scaffold(
-      body: Container(
-        child: const Center(
-            child: Image(
-          image: NetworkImage(
-              "https://c.tenor.com/0iK9a1WkT40AAAAC/loading-white.gif"),
-          height: 445,
-          width: 400,
-          fit: BoxFit.cover,
-        )),
-      ),
+      body: user.user[0]['status'] == 'logged off'
+          ? Center(child: CustomDialog())
+          : Container(
+              child: const Center(
+                  child: Image(
+                image: NetworkImage(
+                    "https://c.tenor.com/0iK9a1WkT40AAAAC/loading-white.gif"),
+                height: 445,
+                width: 400,
+                fit: BoxFit.cover,
+              )),
+            ),
     );
   }
 }
