@@ -10,7 +10,7 @@ class CustomDialog extends StatelessWidget {
     this.title = "Login",
     this.description =
         "Anda harus login terlebih dahulu untuk mengakses fitur ini",
-    this.buttonText = "Ok",
+    this.buttonText = "Login Sekarang",
     // this.image = ""
   });
 
@@ -74,6 +74,9 @@ class CustomDialog extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, "/login");
                   },
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.cyan)),
                   child: Text(
                     buttonText,
                     style: TextStyle(
