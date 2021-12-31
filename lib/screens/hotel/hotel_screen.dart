@@ -1,4 +1,4 @@
-// ignore_for_file: sort_constructors_first, non_constant_identifier_names
+// ignore_for_file: sort_constructors_first, non_constant_identifier_names, only_throw_errors, unused_field
 
 import 'package:flutter/material.dart';
 import 'package:b07uas/widgets/main_drawer.dart';
@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:b07uas/screens/user.dart' as user;
 import 'package:b07uas/screens/login_required.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HotelScreen extends StatefulWidget {
   static const routeName = '/hotel';
@@ -22,6 +23,7 @@ class _HotelScreenState extends State<HotelScreen> {
   String? _Negara;
   List<Hotel> list = [];
   var isLoading = false;
+  Future<void>? _launched;
 
   _fetchData() async {
     setState(() {
@@ -60,6 +62,17 @@ class _HotelScreenState extends State<HotelScreen> {
         _Negara = value!;
       },
     );
+  }
+
+  Future<void> _launchInWebViewOrVC(String url) async {
+    if (!await launch(
+      url,
+      forceSafariVC: true,
+      forceWebView: true,
+      headers: <String, String>{'my_header_key': 'my_header_value'},
+    )) {
+      throw 'Could not launch $url';
+    }
   }
 
   Widget _HotelCard(String? country) {
@@ -106,6 +119,11 @@ class _HotelScreenState extends State<HotelScreen> {
                       if (list[index].country! == country) {
                         return Card(
                           child: ListTile(
+                            onTap: () => setState(() {
+                              _launched =
+                                  _launchInWebViewOrVC(list[index].detail!);
+                            }),
+                            // onTap: _launchURL,
                             leading: Image.network(list[index].foto!),
                             title: Text(list[index].namaHotel!),
                             subtitle: Text('Harga: ' + list[index].harga!),
@@ -192,8 +210,7 @@ class _HotelScreenState extends State<HotelScreen> {
                                         _Negara == "Thailand")
                                     ? _HotelCard(_Negara)
                                     : _Negara != null
-                                        ? Text(
-                                            "Harap ketik negara yang sesuai.")
+                                        ? Text("Harap ketik negara yang sesuai")
                                         : null),
                           ])))),
     );
