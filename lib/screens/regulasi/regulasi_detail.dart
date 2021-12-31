@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:b07uas/model/regulasi/regulasi_data.dart' as data;
+import 'package:b07uas/models/regulasi_data.dart' as data;
 
 class RegulateDetailScreen extends StatefulWidget {
   final String country;

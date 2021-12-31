@@ -37,7 +37,7 @@ class CustomDialog extends StatelessWidget {
           ),
           margin: EdgeInsets.only(top: 66.0),
           decoration: new BoxDecoration(
-            color: Colors.grey[200], //Colors.black.withOpacity(0.3),
+            color: Colors.grey[200],
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(16.0),
             boxShadow: [
@@ -49,14 +49,13 @@ class CustomDialog extends StatelessWidget {
             ],
           ),
           child: Column(
-            mainAxisSize: MainAxisSize.min, // To make the card compact
+            mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text(
                 title,
                 style: TextStyle(
                   fontSize: 24.0,
                   fontWeight: FontWeight.w700,
-                  // color: Colors.black,
                 ),
               ),
               SizedBox(height: 16.0),
@@ -65,7 +64,6 @@ class CustomDialog extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16.0,
-                  // color: Colors.white70,
                 ),
               ),
               SizedBox(height: 24.0),
@@ -74,7 +72,6 @@ class CustomDialog extends StatelessWidget {
                 child: FlatButton(
                   color: Colors.cyan,
                   onPressed: () {
-                    // Navigator.of(context).pop();
                     Navigator.pushNamed(context, "/login");
                   },
                   child: Text(
@@ -99,9 +96,6 @@ class CustomDialog extends StatelessWidget {
               size: 100,
               color: Colors.white,
             ),
-            // backgroundImage: NetworkImage(
-            //   '<https://upload.wikimedia.org/wikipedia/commons/1/1d/Rotating_Konarka_chaka.gif>',
-            // ),
           ),
         ),
       ],
