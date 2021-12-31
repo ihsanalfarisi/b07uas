@@ -1,9 +1,10 @@
 // ignore_for_file: unused_import
-
+import 'package:b07uas/screens/login_required.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import '../user.dart' as user;
 
 class FormArtikel extends StatefulWidget {
   const FormArtikel({Key? key}) : super(key: key);
@@ -127,34 +128,36 @@ class FormArtikelState extends State<FormArtikel> {
     return Scaffold(
         appBar: AppBar(title: Text("Tulis Artikel")),
         body: SingleChildScrollView(
-          child: Container(
-            margin: EdgeInsets.all(24),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  _buildJudul(),
-                  _buildGambar(),
-                  _buildDeskripsi(),
-                  _buildIsi(),
-                  SizedBox(height: 20),
-                  ElevatedButton(
-                    child: Text(
-                      'Submit',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+          child: user.user[0]['status'] == 'logged off'
+              ? Center(child: CustomDialog())
+              : Container(
+                  margin: EdgeInsets.all(24),
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        _buildJudul(),
+                        _buildGambar(),
+                        _buildDeskripsi(),
+                        _buildIsi(),
+                        SizedBox(height: 20),
+                        ElevatedButton(
+                          child: Text(
+                            'Submit',
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
+                          //color: Colors.blue,
+                          onPressed: () {
+                            if (_formKey.currentState?.validate() ?? true) {
+                              showConfirmDialog(context);
+                            }
+                          },
+                        )
+                      ],
                     ),
-                    //color: Colors.blue,
-                    onPressed: () {
-                      if (_formKey.currentState?.validate() ?? true) {
-                        showConfirmDialog(context);
-                      }
-                    },
-                  )
-                ],
-              ),
-            ),
-          ),
+                  ),
+                ),
         ));
   }
 

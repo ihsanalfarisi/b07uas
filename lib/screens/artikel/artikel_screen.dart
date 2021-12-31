@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../user.dart' as user;
+
 import 'package:b07uas/screens/login_screen.dart';
 
 class ListArtikel extends StatefulWidget {
@@ -17,9 +18,7 @@ class ListArtikelState extends State<ListArtikel> {
   FloatingActionButton _getArtikelFloatingActionButton(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        user.user[0]['status'] == 'logged off'
-            ? showAlertDialog(context)
-            : Navigator.pushNamed(context, '/tulis');
+        Navigator.pushNamed(context, '/tulis');
       },
       child: Icon(Icons.edit),
       foregroundColor: Colors.white,
