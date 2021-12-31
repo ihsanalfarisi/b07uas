@@ -35,8 +35,7 @@ class FiturScreen extends StatelessWidget {
                     child: InkWell(
                       splashColor: Colors.blue.withAlpha(30),
                       onTap: () {
-                        Navigator.of(context).pushReplacementNamed(
-                            Loading.routeName,
+                        Navigator.of(context).pushNamed(Loading.routeName,
                             arguments: {
                               "userID": user.user[0]['userID'],
                               "taks": "fetchData"
@@ -83,7 +82,7 @@ class FiturScreen extends StatelessWidget {
                       splashColor: Colors.blue.withAlpha(30),
                       onTap: () {
                         Navigator.of(context)
-                            .pushReplacementNamed(RegulasiScreen.routeName);
+                            .pushNamed(RegulasiScreen.routeName);
                       },
                       child: SizedBox(
                         width: 300,
@@ -126,7 +125,7 @@ class FiturScreen extends StatelessWidget {
                       splashColor: Colors.blue.withAlpha(30),
                       onTap: () {
                         Navigator.of(context)
-                            .pushReplacementNamed(FormSwabState.routeName);
+                            .pushNamed(FormSwabState.routeName);
                       },
                       child: SizedBox(
                         width: 300,
@@ -168,8 +167,7 @@ class FiturScreen extends StatelessWidget {
                     child: InkWell(
                       splashColor: Colors.blue.withAlpha(30),
                       onTap: () {
-                        Navigator.of(context)
-                            .pushReplacementNamed(HotelScreen.routeName);
+                        Navigator.of(context).pushNamed(HotelScreen.routeName);
                       },
                       child: SizedBox(
                         width: 300,
@@ -212,7 +210,7 @@ class FiturScreen extends StatelessWidget {
                       splashColor: Colors.blue.withAlpha(30),
                       onTap: () {
                         Navigator.of(context)
-                            .pushReplacementNamed(ListArtikelState.routeName);
+                            .pushNamed(ListArtikelState.routeName);
                       },
                       child: SizedBox(
                         width: 300,

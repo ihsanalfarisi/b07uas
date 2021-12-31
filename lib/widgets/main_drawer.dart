@@ -38,7 +38,7 @@ class _MainDrawerState extends State<MainDrawer> {
     return buildListTile('Logout', Icons.logout, () {
       user.user.insert(0, {'status': "logged off", "userID": -1});
       print(user.user[0]['status']);
-      Navigator.of(context).pushReplacementNamed('/');
+      Navigator.of(context).pushNamed('/');
     });
   }
 
@@ -72,31 +72,29 @@ class _MainDrawerState extends State<MainDrawer> {
                   ),
           ),
           buildListTile('Beranda', Icons.home, () {
-            Navigator.of(context).pushReplacementNamed('/');
+            Navigator.of(context).pushNamed('/');
           }),
           buildListTile('Info Statistik', Icons.insert_chart, () {
             // karena login belom ada userID nya 1 dulu
-            Navigator.of(context).pushReplacementNamed(Loading.routeName,
-                arguments: {
-                  "userID": user.user[0]['userID'],
-                  "task": "fetchData"
-                });
+            Navigator.of(context).pushNamed(Loading.routeName, arguments: {
+              "userID": user.user[0]['userID'],
+              "task": "fetchData"
+            });
           }),
           buildListTile('Regulasi', Icons.fact_check, () {
-            Navigator.of(context)
-                .pushReplacementNamed(RegulasiScreen.routeName);
+            Navigator.of(context).pushNamed(RegulasiScreen.routeName);
           }),
           buildListTile('Get Swabbed!', Icons.health_and_safety, () {
             Navigator.of(context).pushReplacementNamed(FormSwabState.routeName);
           }),
           buildListTile('Info Hotel Karantina', Icons.hotel, () {
-            Navigator.of(context).pushReplacementNamed(HotelScreen.routeName);
+            Navigator.of(context).pushNamed(HotelScreen.routeName);
           }),
           buildListTile('Artikel', Icons.article, () {
             Navigator.of(context).pushNamed(ListArtikelState.routeName);
           }),
           buildListTile('Support', Icons.help, () {
-            Navigator.of(context).pushReplacementNamed(SupportScreen.routeName);
+            Navigator.of(context).pushNamed(SupportScreen.routeName);
           }),
           Container(
               child: user.user[0]['status'] == 'logged off' ? null : _logout())

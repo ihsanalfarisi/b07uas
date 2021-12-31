@@ -59,8 +59,7 @@ class HomeScreen extends StatelessWidget {
               child: user.user[0]['status'] == 'logged off'
                   ? ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context)
-                            .pushReplacementNamed(LoginPage.routeName);
+                        Navigator.of(context).pushNamed(LoginPage.routeName);
                       },
                       child: Text("Login Sekarang"),
                       style: ButtonStyle(
