@@ -126,7 +126,7 @@ class FiturScreen extends StatelessWidget {
                       splashColor: Colors.blue.withAlpha(30),
                       onTap: () {
                         Navigator.of(context)
-                            .pushReplacementNamed(SwabbedScreen.routeName);
+                            .pushReplacementNamed(FormSwabState.routeName);
                       },
                       child: SizedBox(
                         width: 300,

@@ -88,7 +88,7 @@ class _MainDrawerState extends State<MainDrawer> {
                 .pushReplacementNamed(RegulasiScreen.routeName);
           }),
           buildListTile('Get Swabbed!', Icons.health_and_safety, () {
-            Navigator.of(context).pushReplacementNamed(SwabbedScreen.routeName);
+            Navigator.of(context).pushReplacementNamed(FormSwabState.routeName);
           }),
           buildListTile('Info Hotel', Icons.hotel, () {
             Navigator.of(context).pushReplacementNamed(HotelScreen.routeName);

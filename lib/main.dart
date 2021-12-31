@@ -7,7 +7,7 @@ import '../screens/home_screen.dart';
 import '../screens/tabs_screen.dart';
 import '../screens/artikel/artikel_screen.dart';
 import './/screens/dummy_screen.dart';
-import '../screens/get_swabbed/get_swabbed_screen.dart';
+import 'screens/get_swabbed/get_swabbed_screen.dart';
 import '../screens/hotel/hotel_screen.dart';
 import '../screens/regulasi/regulasi_screen.dart';
 import '../screens/stat/statistik_screen.dart';
@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
         ListArtikelState.routeName: (ctx) => ListArtikel(),
         FormArtikel.namaRoute: (context) => FormArtikel(),
         DetailArtikelState.namaRoute: (context) => DetailArtikel(),
-        SwabbedScreen.routeName: (ctx) => SwabbedScreen(),
+        FormSwabState.routeName: (ctx) => FormSwab(),
         HotelScreen.routeName: (ctx) => HotelScreen(),
         RegulasiScreen.routeName: (ctx) => RegulasiScreen(),
         StatScreen.routeName: (ctx) => StatScreen(),
