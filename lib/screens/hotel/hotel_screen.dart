@@ -46,9 +46,10 @@ class _HotelScreenState extends State<HotelScreen> {
     return TextFormField(
       decoration: InputDecoration(
         labelText: 'Pilih Negara',
+        hintText: "Contoh: Singapore",
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),
       ),
-      maxLength: 1024,
+      maxLength: 50,
       validator: (String? value) {
         if (value!.isEmpty) {
           return 'Pertanyaan ini wajib diisi';
@@ -84,7 +85,7 @@ class _HotelScreenState extends State<HotelScreen> {
               const Text("Indonesia",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.pinkAccent,
+                    color: Colors.cyan,
                     fontSize: 15,
                     fontWeight: FontWeight.w700,
                     letterSpacing: 0,
@@ -147,7 +148,7 @@ class _HotelScreenState extends State<HotelScreen> {
             const Text("Singapore",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.pinkAccent,
+                  color: Colors.cyan,
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
                   letterSpacing: 0,
@@ -209,7 +210,7 @@ class _HotelScreenState extends State<HotelScreen> {
             const Text("Malaysia",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.pinkAccent,
+                  color: Colors.cyan,
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
                   letterSpacing: 0,
@@ -271,7 +272,7 @@ class _HotelScreenState extends State<HotelScreen> {
             const Text("Thailand",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.pinkAccent,
+                  color: Colors.cyan,
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
                   letterSpacing: 0,
@@ -327,6 +328,13 @@ class _HotelScreenState extends State<HotelScreen> {
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
+                            Text("Info Hotel Karantina",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 25,
+                                )),
+                            SizedBox(height: 10),
                             Text(
                                 "Temukan hotel karantina terbaik di negara tujuanmu! \nKenyamananmu adalah prioritas kami.",
                                 textAlign: TextAlign.center,
@@ -345,8 +353,8 @@ class _HotelScreenState extends State<HotelScreen> {
                                 style: TextStyle(
                                   fontSize: 15,
                                 )),
-                            _buildNegara(),
                             const SizedBox(height: 10),
+                            _buildNegara(),
                             ElevatedButton(
                               child: const Text(
                                 'Submit',
@@ -376,7 +384,10 @@ class _HotelScreenState extends State<HotelScreen> {
                                             : _Negara == "Thailand"
                                                 ? _HotelThailand()
                                                 // ? FetchHotelThai()
-                                                : null),
+                                                : _Negara != ""
+                                                    ? Text(
+                                                        "Harap ketik negara yang sesuai.")
+                                                    : null),
                           ])))),
     );
   }
