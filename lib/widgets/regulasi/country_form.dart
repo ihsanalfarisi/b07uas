@@ -76,8 +76,8 @@ class _CountryFormState extends State<CountryForm> {
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             textStyle: const TextStyle(fontSize: 20),
-            primary: Colors.blue,
-            onPrimary: Colors.white,
+            backgroundColor: Colors.blue,
+            onbackgroundColor: Colors.white,
             padding: EdgeInsets.only(left: 10, right: 10, top: 8, bottom: 8),
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(8.0)),
