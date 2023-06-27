@@ -74,6 +74,7 @@ class _MyAppState extends State<MyApp> {
       // ignore: missing_return
       onGenerateRoute: (settings) {
         print(settings.arguments);
+        return null;
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(
